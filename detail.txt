@@ -1,0 +1,385 @@
+================================================================
+  CHAT MARKETPLACE — PLAIN ENGLISH GUIDE
+  For non-technical users, business owners, and new team members
+================================================================
+
+WHAT IS THIS PROJECT?
+---------------------
+Chat Marketplace is a platform where people can buy and sell
+products by chatting with each other — like OLX and WhatsApp
+combined into one app.
+
+It has THREE parts:
+
+  1. BACKEND (the engine)
+     Runs on your computer. Handles all data, users, products,
+     orders, payments, and real-time chat.
+     Start it with: cd backend && npm run dev
+
+  2. MOBILE APP (for phones)
+     A React Native app that runs on Android and iOS phones
+     using the Expo Go app. Connects to the backend over WiFi.
+     Start it with: cd frontend && npx expo start
+
+  3. WEB APP (for computers)
+     A website that runs in any browser on your computer.
+     Connects to the same backend as the mobile app.
+     Start it with: cd web && npm run dev
+     Open at: http://localhost:5173
+
+All three share the same data — a user registered on mobile
+can log in on the web app and see the same orders and chats.
+
+
+================================================================
+  WHO USES THIS?
+================================================================
+
+There are 3 types of users:
+
+  BUYER
+  -----
+  Every new account starts as a Buyer.
+  Buyers browse products, chat with sellers, place orders,
+  and pay via UPI.
+
+  SELLER
+  ------
+  A Buyer can upgrade their account to become a Seller.
+  Sellers list products, chat with buyers, and verify payments.
+  Note: Once you become a Seller, you can no longer place orders.
+
+  ADMIN
+  -----
+  The platform manager. Created manually in the database.
+  Approves products, blocks users, monitors all activity.
+
+
+================================================================
+  BUYER WORKFLOW
+================================================================
+
+1. Register or Login
+   → Go to the app or website
+   → Create an account with name, email, password
+   → You are now a Buyer
+
+2. Browse Products
+   → Home page shows all approved products
+   → Search by keyword or filter by category
+   → Click/tap any product to see details
+
+3. Chat with Seller
+   → On the product page, tap "Chat with Seller"
+   → Ask questions, negotiate price
+   → The product card is automatically shared in chat
+
+4. Place an Order
+   → Tap "Place Order" on the product page
+   → Order is created with status: Initiated 🛒
+
+5. Pay the Seller
+   → Open your order → tap "View Seller Payment Details"
+   → See the seller's UPI ID or bank details
+   → Open Google Pay / PhonePe / any UPI app
+   → Send the exact amount
+   → Note your Transaction ID
+
+6. Submit Payment Proof
+   → Go back to your order
+   → Enter the Transaction ID
+   → Tap "I Have Paid ✓"
+   → Order status changes to: Pending Verification ⏳
+
+7. Wait for Confirmation
+   → Seller checks their UPI app
+   → If correct → Order becomes Paid ✅
+   → If wrong → Order becomes Failed ❌
+
+8. Receive Your Item
+   → Seller delivers and marks order as Completed 🎉
+
+
+================================================================
+  SELLER WORKFLOW
+================================================================
+
+1. Upgrade to Seller
+   → Login → go to Profile
+   → Tap "Become a Seller" → confirm
+
+2. Set Up Payment Details
+   → Profile → Payment Setup
+   → Enter your UPI ID (e.g. yourname@upi)
+   → Optionally add bank account details
+   → Save — buyers will see this when ordering
+
+3. Add a Product
+   → Go to My Products → tap "+ Add"
+   → Fill in: Title, Description, Price, Category
+   → Upload up to 5 photos
+   → Submit for Approval
+   → Wait for admin to approve
+
+4. Product Status
+   ⏳ Pending  = waiting for admin review
+   ✅ Approved = live on marketplace
+   ❌ Rejected = needs editing and resubmission
+
+5. Verify Payments
+   → Go to Orders
+   → When a buyer pays, you see "Action Required"
+   → Check your UPI app for the payment
+   → Tap "✓ Confirm" if received
+   → Tap "✕ Reject" if not received
+
+6. Complete Orders
+   → After delivering the item
+   → Tap "Mark as Completed 🎉"
+
+
+================================================================
+  ADMIN WORKFLOW
+================================================================
+
+1. Login → taken directly to Dashboard
+   → See total users, products, orders, revenue
+   → See "Needs Attention" banner for urgent items
+
+2. Approve Products
+   → Products → filter by Pending
+   → Review each product
+   → Approve ✅ or Reject ❌
+
+3. Manage Users
+   → Users → search by name or email
+   → Block a misbehaving user
+   → Unblock when appropriate
+
+4. Monitor Orders
+   → Orders → filter by status
+   → View any order in detail
+
+5. Monitor Payments
+   → Payments → see all transactions
+   → Total revenue shown at top
+
+
+================================================================
+  ORDER STATUS MEANINGS
+================================================================
+
+  🛒 Initiated             → Order placed, not yet paid
+  ⏳ Pending Verification  → Buyer submitted proof, seller reviewing
+  ✅ Paid                  → Seller confirmed payment
+  🎉 Completed             → Item delivered, order done
+  ❌ Failed                → Seller rejected payment proof
+  🚫 Cancelled             → Buyer cancelled before paying
+
+
+================================================================
+  PRODUCT STATUS MEANINGS
+================================================================
+
+  ⏳ Pending   → Waiting for admin review
+  ✅ Approved  → Live on marketplace
+  ❌ Rejected  → Admin rejected, seller must edit and resubmit
+
+
+================================================================
+  PAYMENT SYSTEM EXPLAINED
+================================================================
+
+This app uses MANUAL UPI payment:
+  - Payment happens OUTSIDE the app (in your UPI app)
+  - The seller manually confirms they received the money
+  - There is NO automatic payment gateway
+
+Why manual?
+  - Works with any UPI app (Google Pay, PhonePe, Paytm, etc.)
+  - No payment gateway fees
+  - Seller has full control
+
+What is a Transaction ID?
+  - Every UPI payment has a unique ID
+  - Looks like: T2024041512345 or 123456789012
+  - Find it in your UPI app's transaction history
+  - Helps the seller verify the payment is real
+
+
+================================================================
+  CHAT SYSTEM EXPLAINED
+================================================================
+
+  - Only Buyers and Sellers can chat with each other
+  - Buyers cannot chat with other Buyers
+  - Sellers cannot chat with other Sellers
+  - Admins do not participate in chats
+
+What you can send:
+  - Text messages
+  - Images (from your gallery)
+  - Product cards (auto-shared when you tap "Chat with Seller")
+
+Real-time features:
+  - Messages appear instantly
+  - "typing..." indicator when the other person is typing
+  - ✓✓ = message was read
+  - ✓  = message sent but not yet read
+
+To delete a message:
+  - Mobile: long-press your message → Delete
+  - Web: double-click your message → confirm in dialog
+
+
+================================================================
+  WEB APP LAYOUT
+================================================================
+
+The web app has a SIDEBAR on the left and CONTENT on the right.
+
+Sidebar contains:
+  - Navigation links (based on your role)
+  - Dark/Light mode toggle (moon 🌙 / sun ☀️ icon)
+  - Your name and role
+  - Logout button
+
+The sidebar can be collapsed by clicking the < > arrow button.
+
+On mobile screens, the sidebar hides and a menu button appears.
+
+
+================================================================
+  DARK MODE
+================================================================
+
+Both the mobile app and web app support dark mode.
+
+Mobile: tap the moon/sun icon in the Profile screen header
+Web:    click the moon/sun icon at the bottom of the sidebar
+
+Your preference is saved automatically and remembered.
+
+
+================================================================
+  IMPORTANT RULES
+================================================================
+
+  1. You must be logged in to use any feature
+  2. Blocked users cannot log in, chat, or place orders
+  3. Products are only visible after admin approval
+  4. Orders cannot be confirmed without seller verification
+  5. Fake payment proofs can result in account blocking
+  6. One account = one role (buyer OR seller, not both)
+  7. Admin accounts are created manually (not through the app)
+  8. You cannot order your own product
+  9. Only one active order per product per buyer
+
+
+================================================================
+  FREQUENTLY ASKED QUESTIONS
+================================================================
+
+Q: Can I be both a buyer and a seller?
+A: No. Once you upgrade to Seller, you can no longer place
+   orders as a buyer.
+
+Q: The seller rejected my payment. What do I do?
+A: Contact the seller via chat and share your payment screenshot.
+   If the seller is being unfair, contact the admin.
+
+Q: How long does product approval take?
+A: Depends on the admin. Usually within 24 hours.
+
+Q: Can I cancel my order after paying?
+A: No. Once you submit payment proof, you cannot cancel.
+   You can only cancel before submitting payment.
+
+Q: The web app shows an error when I register or login.
+A: Make sure the backend server is running on port 5000.
+   Run: cd backend && npm run dev
+
+Q: The mobile app cannot connect to the server.
+A: Make sure your phone and computer are on the same WiFi.
+   Update SERVER_IP in frontend/src/config.js with your
+   computer's WiFi IP address (run ipconfig on Windows).
+
+Q: Products are not showing on the home page.
+A: Products must be approved by admin first.
+   Login as admin and approve them in the Products section.
+
+Q: Can I use the web app on my phone?
+A: The web app works on phone browsers but is designed for
+   desktop. For the best mobile experience, use the Expo app.
+
+
+================================================================
+  HOW TO RUN THE COMPLETE PROJECT
+================================================================
+
+Step 1: Start the backend
+  cd backend
+  npm run dev
+  → Should show: [Server] Running on port 5000
+
+Step 2: Start the web app (for browser)
+  cd web
+  npm run dev
+  → Open: http://localhost:5173
+
+Step 3: Start the mobile app (for phone)
+  cd frontend
+  npx expo start
+  → Scan QR code with Expo Go app on your phone
+
+All three must be running at the same time for full functionality.
+
+
+================================================================
+  TEST CREDENTIALS
+================================================================
+
+  Admin:   admin@test.com    / Admin@123
+  Seller:  seller1@test.com  / Seller@123
+           seller2@test.com  / Seller@123
+           seller3@test.com  / Seller@123
+  Buyer:   buyer1@test.com   / Buyer@123
+           buyer2@test.com   / Buyer@123
+           ... up to buyer7@test.com / Buyer@123
+
+Run "node seed.js" in the backend folder to create this test data.
+
+
+================================================================
+  TECH STACK (FOR DEVELOPERS)
+================================================================
+
+  Backend:     Node.js + Express.js 5.x
+  Database:    MongoDB Atlas via Mongoose 9.x
+  Auth:        JWT (7-day tokens)
+  Password:    bcryptjs 3.x (async pre-save hook, no next())
+  Real-time:   Socket.IO 4.x
+  Security:    Helmet + express-rate-limit
+
+  Mobile App:  React Native 0.74.5 via Expo 51
+  Mobile Nav:  React Navigation v6
+  Mobile Style: React Native StyleSheet (no Tailwind)
+
+  Web App:     React 19 + Vite 5
+  Web Routing: React Router DOM v7
+  Web Style:   Inline styles (no CSS framework)
+
+  Both frontends:
+    - Axios for API calls
+    - Socket.IO client for real-time chat
+    - Same color theme (Deep Teal + Amber + Rose + Emerald)
+    - Dark mode support
+    - Base64 images stored in MongoDB (no file uploads)
+
+  IMPORTANT BUG FIX:
+  bcryptjs v3 changed its API. The User model pre-save hook
+  was updated to NOT call next() after await — Mongoose 6+
+  handles async middleware automatically. This fixed the
+  "Registration failed" 500 error on both mobile and web.
+
+================================================================

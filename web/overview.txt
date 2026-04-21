@@ -1,0 +1,319 @@
+================================================================
+  CHAT MARKETPLACE — WEB APP OVERVIEW
+  For non-technical users, business owners, and new team members
+================================================================
+
+WHAT IS THIS?
+-------------
+This is the WEB VERSION of the Chat Marketplace app.
+It runs in any web browser (Chrome, Firefox, Edge, etc.)
+on your computer — no app installation needed.
+
+It is the same marketplace as the mobile app, just designed
+for desktop and laptop screens with a sidebar navigation.
+
+Open it at: http://localhost:5173
+
+
+================================================================
+  WHO CAN USE IT?
+================================================================
+
+There are 3 types of users:
+
+  BUYER
+  -----
+  - Browses and buys products
+  - Chats with sellers
+  - Places orders and pays via UPI
+  - Tracks order history
+
+  SELLER
+  ------
+  - Lists products for sale
+  - Manages their product listings
+  - Receives and verifies payments
+  - Chats with buyers
+
+  ADMIN
+  -----
+  - Approves or rejects products
+  - Blocks/unblocks users
+  - Views all orders and payments
+  - Sees platform analytics dashboard
+
+
+================================================================
+  HOW THE SCREEN IS LAID OUT
+================================================================
+
+The web app has two main areas:
+
+  LEFT SIDEBAR (narrow panel on the left)
+  ----------------------------------------
+  - Shows navigation links based on your role
+  - Click any link to go to that section
+  - Has a collapse button (< >) to make it smaller
+  - Shows your name and role at the bottom
+  - Has a Dark Mode / Light Mode toggle button
+  - Has a Logout button at the very bottom
+
+  MAIN CONTENT AREA (large area on the right)
+  ---------------------------------------------
+  - This is where each page loads
+  - Scrolls independently from the sidebar
+
+
+================================================================
+  BUYER WORKFLOW — STEP BY STEP
+================================================================
+
+STEP 1: Register or Login
+  - Go to http://localhost:5173
+  - Click "Create one free" to register
+  - Fill in your name, email, and password
+  - You are now logged in as a Buyer
+
+STEP 2: Browse Products (Home page)
+  - The home page shows all available products
+  - Use the search bar to find something specific
+  - Click a category button to filter by type
+    (Electronics, Clothing, Furniture, Books, etc.)
+  - Click any product card to see full details
+
+STEP 3: View a Product
+  - See photos, price, description, and seller info
+  - Click "Chat with Seller" to ask questions
+  - Click "Place Order" to buy the product
+
+STEP 4: Pay for Your Order
+  - After placing an order, go to My Orders
+  - Click the order to open it
+  - Click "View Seller Payment Details"
+    → You will see the seller's UPI ID or bank details
+  - Open your UPI app (Google Pay, PhonePe, etc.)
+  - Send the exact amount to the seller
+  - Come back and enter your Transaction ID
+  - Click "I Have Paid ✓"
+
+STEP 5: Wait for Confirmation
+  - The seller will check and confirm your payment
+  - Your order status will change to "Paid" ✅
+  - Once the seller delivers, it becomes "Completed" 🎉
+
+STEP 6: View Payment History
+  - Go to Profile → Payment History
+  - See all your past payments
+
+
+================================================================
+  SELLER WORKFLOW — STEP BY STEP
+================================================================
+
+STEP 1: Upgrade to Seller
+  - Login as a Buyer first
+  - Go to Profile
+  - Click "Become a Seller"
+  - Confirm the upgrade
+
+STEP 2: Set Up Payment Details
+  - Go to Profile → Payment Setup (in sidebar)
+  - Enter your UPI ID (e.g. yourname@upi)
+  - Optionally add bank account details
+  - Click "Save Payment Details"
+
+STEP 3: Add a Product
+  - Click "Add Product" in the sidebar
+  - Fill in: Title, Description, Price, Category
+  - Upload up to 5 product photos
+  - Click "Submit for Approval"
+  - Wait for admin to approve it
+
+STEP 4: Manage Your Products
+  - Go to "My Products" in the sidebar
+  - See status of each product:
+      ⏳ Pending  = waiting for admin review
+      ✅ Approved = live on marketplace
+      ❌ Rejected = needs editing and resubmission
+  - Click "Edit" to update a product
+  - Click "Delete" to remove a product
+
+STEP 5: Handle Orders
+  - Go to "Orders" in the sidebar
+  - When a buyer submits payment proof, you see it here
+  - Click the order to review the payment
+  - Click "✓ Confirm" if you received the money
+  - Click "✕ Reject" if the payment is wrong
+  - After delivering the item, click "Mark as Completed"
+
+STEP 6: View Earnings
+  - Go to Profile → Payment History
+  - See all payments you have received
+
+
+================================================================
+  ADMIN WORKFLOW — STEP BY STEP
+================================================================
+
+STEP 1: Login as Admin
+  - Use admin credentials to login
+  - You are taken directly to the Admin Dashboard
+
+STEP 2: Dashboard Overview
+  - See total users, products, orders, and revenue
+  - See "Needs Attention" banner for urgent items
+  - See recent users, orders, and payments
+
+STEP 3: Approve or Reject Products
+  - Click "Products" in the sidebar
+  - Filter by "Pending" to see products awaiting review
+  - Click "✓ Approve" to make a product live
+  - Click "✕ Reject" to reject it (seller can edit and resubmit)
+
+STEP 4: Manage Users
+  - Click "Users" in the sidebar
+  - Search by name or email
+  - Filter by role (Buyer / Seller)
+  - Click "Block" to block a misbehaving user
+  - Click "Unblock" to restore their access
+
+STEP 5: Monitor Orders
+  - Click "Orders" in the sidebar
+  - Filter by status to find specific orders
+  - Click any order to see full details
+
+STEP 6: Monitor Payments
+  - Click "Payments" in the sidebar
+  - See total revenue and all transactions
+  - Filter by status (Paid / Failed / Refunded)
+
+
+================================================================
+  NAVIGATION GUIDE
+================================================================
+
+BUYER SIDEBAR LINKS:
+  🏠 Home          → Browse all products
+  💬 Messages      → Chat with sellers
+  🛒 My Orders     → View your order history
+  👤 Profile       → Edit profile, payment history
+
+SELLER SIDEBAR LINKS:
+  📦 My Products   → Manage your listings
+  ➕ Add Product   → List a new product
+  💬 Messages      → Chat with buyers
+  🛒 Orders        → View and manage orders
+  💳 Payment Setup → Set up your UPI/bank details
+  👤 Profile       → Edit profile
+
+ADMIN SIDEBAR LINKS:
+  📊 Dashboard     → Platform overview and analytics
+  👥 Users         → Manage all users
+  📦 Products      → Approve/reject product listings
+  🛒 Orders        → View all orders
+  💳 Payments      → View all payment records
+
+
+================================================================
+  DARK MODE
+================================================================
+
+The web app supports Light and Dark themes.
+
+To switch:
+  - Look at the bottom of the left sidebar
+  - Click the Moon 🌙 icon to switch to Dark Mode
+  - Click the Sun ☀️ icon to switch back to Light Mode
+
+Your preference is saved automatically.
+
+
+================================================================
+  ORDER STATUS MEANINGS
+================================================================
+
+  🛒 Initiated             → Order placed, payment not yet submitted
+  ⏳ Pending Verification  → Buyer submitted payment, seller reviewing
+  ✅ Paid                  → Seller confirmed payment received
+  🎉 Completed             → Item delivered, order done
+  ❌ Failed                → Seller rejected the payment proof
+  🚫 Cancelled             → Buyer cancelled before paying
+
+
+================================================================
+  PRODUCT STATUS MEANINGS
+================================================================
+
+  ⏳ Pending   → Waiting for admin to review
+  ✅ Approved  → Live on marketplace, buyers can see it
+  ❌ Rejected  → Admin rejected it, seller must edit and resubmit
+
+
+================================================================
+  HOW TO START THE WEB APP
+================================================================
+
+You need two things running at the same time:
+
+  1. BACKEND SERVER (the engine)
+     Open a terminal and run:
+       cd backend
+       npm run dev
+     You should see: [Server] Running on port 5000
+
+  2. WEB APP (the browser interface)
+     Open another terminal and run:
+       cd web
+       npm run dev
+     Then open your browser and go to:
+       http://localhost:5173
+
+Both must be running at the same time for the app to work.
+
+
+================================================================
+  TEST CREDENTIALS (for trying the app)
+================================================================
+
+  Admin:   admin@test.com    / Admin@123
+  Seller:  seller1@test.com  / Seller@123
+  Buyer:   buyer1@test.com   / Buyer@123
+
+  More buyers:  buyer2@test.com to buyer7@test.com  / Buyer@123
+  More sellers: seller2@test.com, seller3@test.com  / Seller@123
+
+
+================================================================
+  FREQUENTLY ASKED QUESTIONS
+================================================================
+
+Q: The page shows a blank screen or error. What do I do?
+A: Make sure the backend server is running on port 5000.
+   Check that you ran "npm run dev" in the backend folder.
+
+Q: I can't login. What's wrong?
+A: Make sure you are using the correct email and password.
+   The backend server must be running.
+
+Q: I registered but got an error.
+A: The email may already be in use. Try a different email.
+   Make sure the backend server is running.
+
+Q: Products are not showing on the home page.
+A: Products must be approved by admin first.
+   Login as admin and approve them in the Products section.
+
+Q: My chat messages are not sending.
+A: Make sure the backend server is running.
+   Both users must be logged in for real-time chat to work.
+
+Q: Can I use this on my phone?
+A: This web app is designed for desktop/laptop browsers.
+   For mobile phones, use the Expo mobile app instead.
+
+Q: How is this different from the mobile app?
+A: Same features, same data, same backend.
+   The web app has a sidebar layout for larger screens.
+   The mobile app is designed for phones with Expo Go.
+
+================================================================

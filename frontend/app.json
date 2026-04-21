@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "Chat Marketplace",
+    "slug": "chat-marketplace",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0D9488"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.chatmarketplace.app",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Allow Chat Marketplace to access your photos to upload product images and payment screenshots.",
+        "NSCameraUsageDescription": "Allow Chat Marketplace to use your camera to take product photos."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0D9488"
+      },
+      "package": "com.chatmarketplace.app",
+      "permissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Chat Marketplace to access your photos.",
+          "cameraPermission": "Allow Chat Marketplace to use your camera."
+        }
+      ]
+    ]
+  }
+}

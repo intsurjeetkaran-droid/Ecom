@@ -1,0 +1,10 @@
+import api from './axios';
+export const createOrder        = (productId) => api.post('/orders', { productId });
+export const getBuyerOrders     = ()          => api.get('/orders/buyer');
+export const getSellerOrders    = (p)         => api.get('/orders/seller', { params: p });
+export const getAllOrders        = (p)         => api.get('/orders', { params: p });
+export const getOrderById       = (id)        => api.get(`/orders/${id}`);
+export const submitPaymentProof = (id, data)  => api.post(`/orders/${id}/submit-payment`, data);
+export const verifyPayment      = (id, a, n)  => api.put(`/orders/${id}/verify`, { action: a, sellerNote: n });
+export const completeOrder      = (id)        => api.put(`/orders/${id}/complete`);
+export const cancelOrder        = (id)        => api.put(`/orders/${id}/cancel`);
