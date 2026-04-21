@@ -36,13 +36,21 @@ const connectDB    = require('./config/db');
 const app    = express();
 const server = http.createServer(app);
 
+// ─── Trust Proxy (Required for Render/Heroku/etc.) ───
+// This allows express-rate-limit to correctly identify users behind proxies
+app.set('trust proxy', 1);
+
 // ─── Socket.io Setup ──────────────────────────────
 const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS === '*'
   ? '*'
   : process.env.ALLOWED_ORIGINS?.split(',') || '*';
 
 const io = new Server(server, {
-  cors: { origin: ALLOWED_ORIGINS, methods: ['GET', 'POST'] },
+  cors: { 
+    origin: ALLOWED_ORIGINS, 
+    methods: ['GET', 'POST'],
+    credentials: true,
+  },
 });
 
 // ─── Database ─────────────────────────────────────
@@ -56,6 +64,7 @@ app.use(cors({
   origin: ALLOWED_ORIGINS,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
 }));
 
 // ─── Rate Limiting ────────────────────────────────
